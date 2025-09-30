@@ -1,0 +1,137 @@
+{
+  "info": {
+    "_postman_id": "abc12345-def6-7890-ghi1-234567890abc",
+    "name": "Delivery Cost API - Assignment Test Cases",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Test Case 1",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"A\": 1, \"G\": 1, \"H\": 1, \"I\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/delivery/calculate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api","delivery","calculate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Cost matches expected 86\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(86);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Test Case 2",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"A\":1, \"B\":1, \"C\":1, \"G\":1, \"H\":1, \"I\":1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/delivery/calculate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api","delivery","calculate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Cost matches expected 118\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(118);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Test Case 3",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"A\":1, \"B\":1, \"C\":1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/delivery/calculate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api","delivery","calculate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Cost matches expected 78\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(78);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Test Case 4",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"A\":1, \"B\":1, \"C\":1, \"D\":1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/delivery/calculate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api","delivery","calculate"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Cost matches expected 168\", function () {",
+              "    var jsonData = pm.response.json();",
+              "    pm.expect(jsonData.cost).to.eql(168);",
+              "});"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ]
+    }
+  ]
+}

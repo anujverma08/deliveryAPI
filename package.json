@@ -1,0 +1,13 @@
+{
+  "name": "delivery-api",
+  "version": "1.0.0",
+  "description": "Assignment REST API for minimum delivery cost",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^4.18.2"
+  }
+}
