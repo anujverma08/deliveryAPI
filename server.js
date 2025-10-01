@@ -3,9 +3,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const deliveryRoutes = require('./routes/delivery');
 require('dotenv').config(); // Load environment variables
+const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3000; // fallback to 3000
+app.use(cors()); // allow all origins
 
 app.use(bodyParser.json());
 
