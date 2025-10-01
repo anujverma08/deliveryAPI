@@ -36,6 +36,7 @@ function buildShortest(nodes, directEdges) {
 
 function reconstructPath(u, v, next) {
     if (!next[u][v]) return null;
+    // check
     const path = [u];
     let cur = u;
     while (cur !== v) {
